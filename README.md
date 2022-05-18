@@ -1,6 +1,8 @@
 # EXP-02-INTERFACING-DIGITAL-INPUT-SENSOR-WITH-ARDUINO-PUSH-BUTTON
 
-AIM:  To interface a digital input (push button) and blink and LED upon activation.
+AIM:  
+To interface a digital input (push button) and blink and LED upon activation.
+
 COMPONENTS REQUIRED:
 1.	1 KΩ Resistor 
 2.	Arduino Uno 
@@ -8,7 +10,9 @@ COMPONENTS REQUIRED:
 4.	USB Interfacing cable 
 5.	Jumper wires 
 6.	LED of choice 
+	
 THEORY :
+
 Arduino UNO
  	  The Uno is a microcontroller board based on the ATmega328P. It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 6 analog inputs, a 16 MHz quartz crystal, a USB connection, a power jack, an ICSP header and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started.
 	Technical specifications of Arduino UNO :
@@ -30,12 +34,13 @@ PIN DIAGRAM FOR ATMEGA 328
 ![image](https://user-images.githubusercontent.com/36288975/163530394-115baee4-7ed1-49fe-9cce-d7b625e11e85.png)
 
 FIGURE-01
+
 ![image](https://user-images.githubusercontent.com/36288975/163530431-4d390e98-0942-42d8-95b8-f57d348e6ad8.png)
 
 
 
-FIGURE-02
-PROCEDURE 
+
+PROCEDURE:
  Open tinker cad account 
 1.	Select Arduino uno , bread board , digital input and digital output 
 2.	Connect the circuit as given in the figure 
@@ -58,24 +63,43 @@ CIRCUIT DIAGRAM
 
 ![image](https://user-images.githubusercontent.com/36288975/163530437-87a0afbd-b3c9-44ad-b907-5de63486fb9d.png)
 
+FIGURE-02
+
+![image](https://user-images.githubusercontent.com/78891075/168966108-89aeb1b8-9979-44e7-9808-2dfda5f9df72.png)
 
 
-FIGURE -03
 
 
-
-
-
-PROGRAM 
+PROGRAM:
+```
+const int BUTTON = 2;
+const int LED = 8;
+int BUTTONstate = 0;
+void setup()
+{
+  pinMode(BUTTON, INPUT);
+  pinMode(LED, OUTPUT);
+}
+void loop()
+{
+  BUTTONstate = digitalRead(BUTTON);
+  if(BUTTONstate == HIGH)
+  {
+    digitalWrite(LED, HIGH);
+  }
+  else{
+    digitalWrite(LED, LOW);
+  }
+}
+```
  
  
  
- 
- 
-
-
 
 Output of the simulation :
 
-[My image](username.github.com/repository/img/image.jpg)
+![image](https://user-images.githubusercontent.com/78891075/168966375-47d74509-27a3-43e3-9355-81924360ebc6.png)
+
+Result:
+Thus, we have interfaced a digital input (push button) and blink of LED upon activation.
 

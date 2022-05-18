@@ -71,7 +71,7 @@ FIGURE-02
 
 
 PROGRAM:
-```tindercad
+```c++
 const int BUTTON = 2;
 const int LED = 8;
 int BUTTONstate = 0;
